@@ -1,10 +1,17 @@
 import sys
-from statistics import mean, variance
+from statistics import variance
 
 def solve(input):
     lines = input.split("\n")
     n, k = map(int, lines[0].split())
-    data = sorted(list(map(int, lines[1:])))
+    #print(lines)
+    data = []
+    for x in lines[1:]:
+        x = x.strip()
+        if x:
+            data.append(int(x))
+    data.sort()
+    #print(data)
     # First off find our collection
     i, j = 0, k # Exclusive
     curminbad = float('inf')
@@ -13,7 +20,6 @@ def solve(input):
         var = variance(data[i:j])
         #print(var)
         curminbad = min(var, curminbad)
-
         i += 1
         j += 1
     sys.stdout.write(str(curminbad))
