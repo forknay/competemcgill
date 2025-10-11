@@ -7,7 +7,9 @@ def solution(stdin):
     a = int(dist[0]/3)
     b = int(dist[-1]/3)
 
-    for d in dist in dist[1:]:
+    
+
+    
     
 
     return

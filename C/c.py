@@ -3,13 +3,11 @@ import sys
 
 def solution(file):
     k = int(file.readline().strip().split()[1])
-    print(k)
 
     diff = set()
     
     for d in file.readlines():
         diff.add(int(d.strip()))
-        print(d)
         if len(diff) >= k:
             sys.stdout.write(str(k))
             return
