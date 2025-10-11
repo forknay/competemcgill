@@ -53,12 +53,12 @@ def findLED():
 
 
 
-start_time = time.perf_counter()
-print(findLED())
-end_time = time.perf_counter()
+# start_time = time.perf_counter()
+sys.stdout.write(str(findLED()))
+# end_time = time.perf_counter()
 
-elapsed_time = end_time - start_time
-print(f"Execution time: {elapsed_time:.4f} seconds")
+# elapsed_time = end_time - start_time
+# print(f"Execution time: {elapsed_time:.4f} seconds")
 
 
 
