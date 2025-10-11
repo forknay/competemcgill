@@ -19,20 +19,16 @@ def solve(input):
     team_cont = {0:0}
     for i, t in enumerate(lines[1].split()):
         team_cont[int(i)+1] = int(t)
-    sub = subsets(list(map(int, lines[2].split())))
+    sub = subsets(list(map(int, lines[2].split())))[1:]
     # print(team_cont)
     # print(sub)
     # now check for answers
     tot = 0
-    teamnum = 0
     for comp in sub:
         n = len(comp)
-        curtot = sum(comp) + team_cont[n]
-        if curtot > tot:
-            tot = curtot
-            teamnum = n
-    ans = tot/teamnum
-    print(str(ans), end="")
+        curtot = (sum(comp) + team_cont[n])/n
+        tot = max(tot, curtot)
+    print(str(tot), end="")
 
 
 if __name__ == "__main__":
