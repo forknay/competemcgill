@@ -99,13 +99,13 @@ def solution(stdin):
             move_forward()
         else:
             turn_right()
-        
-        if (x, y) == (x_init, y_init):
+
+        if (x, y, direction) == (x_init, y_init, 1):
             sys.stdout.write(str(0))
             return
 
 if __name__ == '__main__':
-    start_time = time.perf_counter()
+    #start_time = time.perf_counter()
     solution(sys.stdin)
-    end_time = time.perf_counter()
-    print("\n" + f"Execution time: {end_time - start_time:.4f} seconds")
+    # end_time = time.perf_counter()
+    # print("\n" + f"Execution time: {end_time - start_time:.4f} seconds")

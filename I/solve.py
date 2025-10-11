@@ -20,8 +20,8 @@ def solve(input):
     for i, t in enumerate(lines[1].split()):
         team_cont[int(i)+1] = int(t)
     sub = subsets(list(map(int, lines[2].split())))
-    print(team_cont)
-    print(sub)
+    # print(team_cont)
+    # print(sub)
     # now check for answers
     tot = 0
     teamnum = 0
@@ -32,7 +32,7 @@ def solve(input):
             tot = curtot
             teamnum = n
     ans = tot/teamnum
-    print(str(ans), "")
+    print(str(ans), end="")
 
 
 if __name__ == "__main__":
