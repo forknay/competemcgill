@@ -49,6 +49,6 @@ def curlingGame():
 
     return str(pointsRed)+" "+str(pointsYellow)
 
-print(curlingGame())
+sys.stdout.write(curlingGame())
 
 

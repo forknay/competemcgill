@@ -86,9 +86,11 @@ def solution(stdin):
             x -= 1
 
     maze = stdin.readlines()
+    pos = set()
     x, y = x_init, y_init
     while True:
         #print(x, y, direction)
+        pos.add((x, y, direction))
         if (x, y) == (x_final, y_final):
             sys.stdout.write(str(1))
             return
@@ -100,7 +102,7 @@ def solution(stdin):
         else:
             turn_right()
 
-        if (x, y, direction) == (x_init, y_init, 1):
+        if (x, y, direction) in pos:
             sys.stdout.write(str(0))
             return
 
