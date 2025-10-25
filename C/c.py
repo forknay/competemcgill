@@ -1,24 +1,39 @@
-import time
 import sys
 
-def solution(file):
-    k = int(file.readline().strip().split()[1])
+l = []
 
-    diff = set()
+def ans():
+    for a in l[:-1]:
+        sys.stdout.write(str(a) + " ")
+    sys.stdout.write(str(l[-1]))
+    # sys.stdout.write("\n")
+    exit()
+
+def solve(file):
+    n, t = map(int, file.readline().strip().split(" "))
+    for a in file.readline().strip().split(" "):
+        l.append(int(a))
+
+    for g in range(t):
+        hand = 1
+        for i in range(n):
+            if hand == 1:
+                if not l[i]:
+                    l[i] += 1
+                    break
+                hand += l[i]
+                l[i] = 0
+            else:
+                hand -= 1
+                l[i] += 1
+
+    ans()
+
+        
+
     
-    for d in file.readlines():
-        diff.add(int(d.strip()))
-        if len(diff) >= k:
-            sys.stdout.write(str(k))
-            return
-    
-    sys.stdout.write(str(len(diff)))
-    
 
 
 
-if __name__ == '__main__':
-    #start_time = time.perf_counter()
-    solution(sys.stdin)
-    #end_time = time.perf_counter()
-    #print("\n" + f"Execution time: {end_time - start_time:.4f} seconds")
+if __name__ == "__main__":
+    solve(sys.stdin)
